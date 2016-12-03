@@ -26,11 +26,11 @@
 		<!--object type="application/x-shockwave-flash" src="//cdn.jsdelivr.net/jwplayer/7.1.4/jwplayer.flash.swf"></object-->
 
 		<script>
-			var player = jwplayer('player').setup({
+			jwplayer('player').setup({
 				file: 'rtmp://dev.wowza.longtailvideo.com/vod/_definst_/sintel/640.mp4'
 			});
 
-			var player1 = jwplayer('player1').setup({
+			jwplayer('player1').setup({
 				sources: [{ 
 					file: "rtmp://dev.wowza.longtailvideo.com/vod/_definst_/sintel/640.mp4"
 				},{
@@ -39,7 +39,7 @@
 				primary: "flash"
 			});
 
-			var player2 = jwplayer('player2').setup({
+			jwplayer('player2').setup({
 				file: "videoplayback.mp4"
 			});
 		</script>

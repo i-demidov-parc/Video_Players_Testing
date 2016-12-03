@@ -8,9 +8,23 @@
 	</head>
 	<body>
 		<h3>Flowplayer Test</h3>
-		<video width="640" height="480" controls>
-			<source src="/Content/videoplayback.mp4" type="video/mp4">
-			Your browser does not support the video tag.
+
+		<h2>Only stream</h2>
+
+		<video id="player" class="flowplayer" width="640" height="480" controls>
+			<source src="rtmp://dev.wowza.longtailvideo.com/vod/_definst_/sintel/640.mp4" type="rtmp/mp4">
 		</video>
+
+		<h2>With mp4 fallback</h2>
+
+		<h2>Only mp4</h2>
+
+		<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.js"></script>
+		<link href="//cdnjs.cloudflare.com/ajax/libs/flowplayer/5.4.6/skin/minimalist.css" rel="stylesheet">
+		<script src="//cdnjs.cloudflare.com/ajax/libs/flowplayer/5.4.6/flowplayer.js"></script>
+
+		<script>
+			console.log(flowplayer('#player'));
+		</script>
 	</body>
 </html>
