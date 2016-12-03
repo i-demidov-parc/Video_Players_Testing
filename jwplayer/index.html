@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<title>JWPlayer Test</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width" />
+	</head>
+	<body>
+		<h3>JWPlayer Test</h3>
+
+		<div id="player"></div>
+
+		<link href="//cdn.jsdelivr.net/jwplayer/7.1.4/skins/glow.css" rel="stylesheet">
+		<script src="//cdn.jsdelivr.net/jwplayer/7.1.4/jwplayer.js"></script>
+		<!--object type="application/x-shockwave-flash" src="//cdn.jsdelivr.net/jwplayer/7.1.4/jwplayer.flash.swf"></object-->
+
+		<script>
+			var player = jwplayer('player').setup({
+				//file: '/Content/videoplayback.mp4',
+				file: 'rtmp://dev.wowza.longtailvideo.com/vod/_definst_/sintel/640.mp4'
+			});
+
+			console.log(player);
+		</script>
+	</body>
+</html>
