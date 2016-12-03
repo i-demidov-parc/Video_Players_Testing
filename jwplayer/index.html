@@ -9,7 +9,17 @@
 	<body>
 		<h3>JWPlayer Test</h3>
 
+		<h2>Only stream</h2>
+
 		<div id="player"></div>
+
+		<h2>With mp4 fallback</h2>
+
+		<div id="player1"></div>
+
+		<h2>Only mp4</h2>
+
+		<div id="player2"></div>
 
 		<link href="//cdn.jsdelivr.net/jwplayer/7.1.4/skins/glow.css" rel="stylesheet">
 		<script src="//cdn.jsdelivr.net/jwplayer/7.1.4/jwplayer.js"></script>
@@ -17,11 +27,21 @@
 
 		<script>
 			var player = jwplayer('player').setup({
-				//file: '/Content/videoplayback.mp4',
 				file: 'rtmp://dev.wowza.longtailvideo.com/vod/_definst_/sintel/640.mp4'
 			});
 
-			console.log(player);
+			var player1 = jwplayer('player1').setup({
+				sources: [{ 
+					file: "rtmp://dev.wowza.longtailvideo.com/vod/_definst_/sintel/640.mp4"
+				},{
+					file: "videoplayback.mp4"
+				}],
+				primary: "flash"
+			});
+
+			var player2 = jwplayer('player2').setup({
+				file: "videoplayback.mp4"
+			});
 		</script>
 	</body>
 </html>
